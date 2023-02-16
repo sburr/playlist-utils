@@ -39,7 +39,7 @@ $ grep key.Name Simple.xml
 
 # convert from different playlist formats to JSON just for fun
 # and pipe it to the ever useful [json](https://trentm.com/json/) cli utility
-$ dist/playlist convert Simple.xml | json -a Name
+$ playlist convert Simple.xml | json -a Name
 Angela
 Orange Sky
 All I Want Is You
