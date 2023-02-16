@@ -1,0 +1,30 @@
+{
+  "name": "playlist-utils",
+  "version": "1.0.2",
+  "description": "A set of convenient utilities for working with iTunes playlists",
+  "author": "Steven Burr (https://github.com/sburr)",
+  "repository": "github:sburr/playlist-utils",
+  "license": "MIT",
+  "main": "dist/playlist.js",
+  "scripts": {
+    "build": "coffee -o dist -c src && for f in dist/playlist*.js; do n=$(basename $f .js); echo '#!/usr/bin/env node' > dist/$n; cat $f >> dist/$n; chmod 755 dist/$n; done",
+    "clean": "rm -rf dist/*"
+  },
+  "bin": {
+    "playlist": "dist/playlist",
+    "playlist-convert": "dist/playlist-convert",
+    "playlist-tag": "dist/playlist-tag"
+  },
+  "dependencies": {
+    "commander": "^9.1.0",
+    "csv-parse": "^5.0.4",
+    "eol": "^0.9.1",
+    "mkdirp": "^1.0.4",
+    "playlist-parser": "^0.0.12",
+    "plist": "^3.0.5",
+    "sanitize-filename": "^1.6.3"
+  },
+  "devDependencies": {
+    "coffeescript": "^2.7.0"
+  }
+}
