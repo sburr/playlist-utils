@@ -31,7 +31,7 @@ MyAudio 2.mp3
 MyAudio 3.mp3
 
 # notice that there are three songs in our playlist
-$ grep key.Name Simple.xml
+$ grep key.Name myplaylist.xml
 			<key>Name</key><string>Angela</string>
 			<key>Name</key><string>Orange Sky</string>
 			<key>Name</key><string>All I Want Is You</string>
@@ -39,7 +39,7 @@ $ grep key.Name Simple.xml
 
 # convert from different playlist formats to JSON just for fun
 # and pipe it to the ever useful [json](https://trentm.com/json/) cli utility
-$ playlist convert Simple.xml | json -a Name
+$ playlist convert myplaylist.xml | json -a Name
 Angela
 Orange Sky
 All I Want Is You
@@ -47,7 +47,7 @@ All I Want Is You
 # add all of the ID3 tag information and relocate the updated .mp3 files
 # into an `./<Artist>/<Album>/<TrackNum> <Track Title>.mp3` directory structure 
 # (will create the 'out' directory since it does not exist)
-$ playlist tags --base-name MyAudio --output-dir out --move-files myplaylist.json
+$ playlist tags --base-name MyAudio --output-dir out --move-files myplaylist.xml
 $ tree out
 out/
 ├── Alexi Murdoch
